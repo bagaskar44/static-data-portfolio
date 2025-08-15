@@ -61,7 +61,7 @@ function addParallaxEffect() {
 // Scroll indicator click functionality
 function initScrollIndicator() {
     const scrollIndicator = document.querySelector('.scroll-indicator');
-    const projectsSection = document.querySelector('.projects');
+    const projectsSection = document.querySelector('.experience');
     
     scrollIndicator.addEventListener('click', () => {
         projectsSection.scrollIntoView({ behavior: 'smooth' });
@@ -108,4 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollIndicator();
     initExperienceAnimation();
     console.log('Portfolio loaded successfully!');
+
 });
