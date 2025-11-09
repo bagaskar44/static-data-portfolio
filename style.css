@@ -511,7 +511,7 @@ body {
 
 /* Additional project card backgrounds */
 .project-card:nth-child(1) {
-    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2ttMmZrb3Z0dGsyZTl1b3JyZWNoeGhqMnJoY2tvc2xzZmh4cHJ1ayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/48tsaAibt19ldQyCby/giphy.gif');
+    background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXpsbnF5bGpsdmxjMmtibGdncDljdWk3OTJ0OWJzcmF3ZWpxcGQ4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sgO8S8ZVGIRg6aWJsU/giphy.gif');
 }
 
 .project-card:nth-child(2) {
@@ -711,3 +711,4 @@ body {
     }
 
 }
+
