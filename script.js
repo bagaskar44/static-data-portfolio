@@ -44,12 +44,15 @@ function addSmoothScrolling() {
 }
 
 function addParallaxEffect() {
+    // Disable parallax on mobile/tablet to prevent scroll jank
+    if (window.innerWidth <= 900) return;
+
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const rate = scrolled * -0.5;
         const dataViz = document.getElementById('dataVisualization');
         if (dataViz) {
-            dataViz.style.transform = `translateY(${rate}px)`; // ✅ Fixed: Added backticks
+            dataViz.style.transform = `translateY(${rate}px)`;
         }
     });
 }
@@ -58,12 +61,12 @@ function addParallaxEffect() {
 function initScrollIndicator() {
     const scrollIndicator = document.querySelector('.scroll-indicator');
     const experienceSection = document.querySelector('.experience');
-    
+
     if (scrollIndicator && experienceSection) {
         scrollIndicator.addEventListener('click', () => {
             experienceSection.scrollIntoView({ behavior: 'smooth' });
         });
-        
+
         // Hide scroll indicator when scrolled
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 100) {
@@ -78,17 +81,17 @@ function initScrollIndicator() {
 // Experience Section Animation
 function initExperienceAnimation() {
     const experienceItems = document.querySelectorAll('.experience-item');
-    
+
     if (experienceItems.length === 0) {
         console.warn('No experience items found');
         return;
     }
-    
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -96,7 +99,7 @@ function initExperienceAnimation() {
             }
         });
     }, observerOptions);
-    
+
     experienceItems.forEach(item => {
         item.style.animationPlayState = 'paused';
         observer.observe(item);
