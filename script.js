@@ -20,98 +20,12 @@ function initProjectCards() {
     });
 }
 
-// Skill highlighting functionality
-function initSkillShowcase() {
-    const skillNodes = document.querySelectorAll('.skill-node');
-    const projectCards = document.querySelectorAll('.project-card');
-    skillNodes.forEach(node => {
-        node.addEventListener('mouseenter', () => {
-            const skill = node.dataset.skill;
-            projectCards.forEach(card => {
-                if (card.dataset.skill.includes(skill)) {
-                    card.classList.add('highlighted');
-                }
-            });
-        });
-        node.addEventListener('mouseleave', () => {
-            projectCards.forEach(card => card.classList.remove('highlighted'));
-        });
-    });
-}
-
 function addSmoothScrolling() {
     document.documentElement.style.scrollBehavior = 'smooth';
 }
 
-function addParallaxEffect() {
-    // Disable parallax on mobile/tablet to prevent scroll jank
-    if (window.innerWidth <= 900) return;
-
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        const dataViz = document.getElementById('dataVisualization');
-        if (dataViz) {
-            dataViz.style.transform = `translateY(${rate}px)`;
-        }
-    });
-}
-
-// Scroll indicator click functionality
-function initScrollIndicator() {
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const experienceSection = document.querySelector('.experience');
-
-    if (scrollIndicator && experienceSection) {
-        scrollIndicator.addEventListener('click', () => {
-            experienceSection.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Hide scroll indicator when scrolled
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                scrollIndicator.style.opacity = '0';
-            } else {
-                scrollIndicator.style.opacity = '0.7';
-            }
-        });
-    }
-}
-
-// Experience Section Animation
-function initExperienceAnimation() {
-    const experienceItems = document.querySelectorAll('.experience-item');
-
-    if (experienceItems.length === 0) {
-        console.warn('No experience items found');
-        return;
-    }
-
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationPlayState = 'running';
-            }
-        });
-    }, observerOptions);
-
-    experienceItems.forEach(item => {
-        item.style.animationPlayState = 'paused';
-        observer.observe(item);
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     initProjectCards();
-    initSkillShowcase();
     addSmoothScrolling();
-    addParallaxEffect();
-    initScrollIndicator();
-    initExperienceAnimation();
     console.log('Portfolio loaded successfully!');
 });
