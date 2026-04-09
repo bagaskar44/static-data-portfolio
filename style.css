@@ -442,6 +442,7 @@ h1 em {
 
 .projects-list {
     padding: 0; 
+    margin-top: 40px; /* Tambahan ini untuk menyeimbangkan jarak bawah menjadi 64px */
 }
 
 .project-item {
@@ -775,7 +776,10 @@ h1 em {
     .exp-divider { margin: 0; }
 
     .projects { padding: 40px 0 40px; }
-    .projects-list { padding: 0; }
+   .projects-list { 
+        padding: 0; 
+        margin-top: 32px; /* Tambahan ini agar jarak di HP juga presisi (8px + 32px = 40px) */
+    }
     .project-item { grid-template-columns: 1fr; gap: 16px; padding: 28px 20px; }
     .project-number { display: none; }
     .project-cta { justify-content: flex-start; }
