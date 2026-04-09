@@ -245,7 +245,7 @@ h1 em {
     align-items: center;
     gap: 20px;
     padding: 0 48px;
-    margin-bottom: 64px;
+    margin-bottom: 24px;
 }
 
 .section-label span:first-child {
@@ -714,7 +714,7 @@ h1 em {
     .hero-photo-container { width: 180px; }
     .hero-scroll { display: none; }
 
-    .section-label { padding: 0 24px; margin-bottom: 48px; }
+    .section-label { padding: 0 24px; margin-bottom: 8px; }
 
     .experiences { padding: 48px 0 60px; }
 
@@ -765,7 +765,7 @@ h1 em {
     .hero-tags { gap: 6px; }
     .hero-tags span { font-size: 0.72rem; padding: 5px 12px; }
 
-    .section-label { padding: 0 20px; margin-bottom: 40px; }
+    .section-label { padding: 0 20px; margin-bottom: 8px; }
 
     .experiences { padding: 40px 0 40px; }
     .exp-block { padding: 32px 20px; }
