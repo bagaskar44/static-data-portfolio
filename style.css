@@ -427,7 +427,7 @@ h1 em {
 .exp-divider {
     height: 1px;
     background: var(--border);
-    margin: 0 48px;
+    margin: 0; 
 }
 
 /* ============================================================
@@ -441,7 +441,7 @@ h1 em {
 }
 
 .projects-list {
-    padding: 0 48px;
+    padding: 0; 
 }
 
 .project-item {
@@ -449,7 +449,7 @@ h1 em {
     grid-template-columns: 80px 1fr 80px;
     align-items: start;
     gap: 32px;
-    padding: 24px 0; /* DIPERPENDEK padding vertikal dari 40px ke 24px */
+    padding: 32px 48px;
     border-bottom: 1px solid var(--border);
     cursor: pointer;
     position: relative;
@@ -468,7 +468,7 @@ h1 em {
 .project-item::before {
     content: '';
     position: absolute;
-    inset: 0 -32px; /* Diberi offset horizontal negatif agar hover background melebar ke samping */
+    inset: 0; 
     background: var(--accent-light);
     opacity: 0;
     transition: opacity 0.3s;
@@ -716,7 +716,7 @@ h1 em {
 
     .section-label { padding: 0 24px; margin-bottom: 48px; }
 
-    .experiences { padding: 80px 0 60px; }
+    .experiences { padding: 48px 0 60px; }
 
     .exp-block {
         grid-template-columns: 1fr;
@@ -737,12 +737,12 @@ h1 em {
 
     .exp-desc { max-width: 100%; }
 
-    .exp-divider { margin: 0 24px; }
+    .exp-divider { margin: 0; }
 
-    .projects { padding: 80px 0 60px; }
-    .projects-list { padding: 0 24px; }
+    .projects { padding: 48px 0 60px; }
+    .projects-list { padding: 0; }
 
-    .project-item { grid-template-columns: 60px 1fr 48px; gap: 20px; }
+    .project-item { grid-template-columns: 60px 1fr 48px; gap: 20px; padding: 24px; }
     .project-title { font-size: 1.5rem; }
 
     .footer { padding: 60px 24px 40px; }
@@ -765,20 +765,18 @@ h1 em {
     .hero-tags { gap: 6px; }
     .hero-tags span { font-size: 0.72rem; padding: 5px 12px; }
 
-    .section-label { padding: 0 20px; margin-bottom: 36px; }
+    .section-label { padding: 0 20px; margin-bottom: 40px; }
 
+    .experiences { padding: 40px 0 40px; }
     .exp-block { padding: 32px 20px; }
     .exp-photos { grid-template-rows: 180px 100px; }
     .exp-title { font-size: 1.8rem; }
 
-    .exp-divider { margin: 0 20px; }
+    .exp-divider { margin: 0; }
 
-    .projects-list { padding: 0 20px; }
-    .project-item { 
-        grid-template-columns: 1fr; 
-        gap: 16px;
-        padding: 28px 0;
-    }
+    .projects { padding: 40px 0 40px; }
+    .projects-list { padding: 0; }
+    .project-item { grid-template-columns: 1fr; gap: 16px; padding: 28px 20px; }
     .project-number { display: none; }
     .project-cta { justify-content: flex-start; }
     .project-title { font-size: 1.4rem; }
