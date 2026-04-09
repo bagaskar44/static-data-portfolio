@@ -1,35 +1,117 @@
-// Custom cursor
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-  setTimeout(() => {
-    ring.style.left = e.clientX + 'px';
-    ring.style.top = e.clientY + 'px';
-  }, 60);
-});
-document.querySelectorAll('a, button, .proj-card, .exp-item').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width = '6px'; cursor.style.height = '6px';
-    ring.style.width = '52px'; ring.style.height = '52px';
-    ring.style.borderColor = 'var(--rust)';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width = '12px'; cursor.style.height = '12px';
-    ring.style.width = '36px'; ring.style.height = '36px';
-    ring.style.borderColor = 'var(--ink)';
-  });
-});
+// Project card interaction functionality
+function initProjectCards() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const isExpanded = card.classList.contains('expanded');
+            cards.forEach(c => c.classList.remove('expanded', 'dimmed'));
+            if (!isExpanded) {
+                card.classList.add('expanded');
+                cards.forEach(c => {
+                    if (c !== card) c.classList.add('dimmed');
+                });
+            }
+        });
+    });
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.project-card')) {
+            cards.forEach(card => card.classList.remove('expanded', 'dimmed'));
+        }
+    });
+}
 
-// Intersection Observer for reveal animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, 80);
-      observer.unobserve(entry.target);
+// Skill highlighting functionality
+function initSkillShowcase() {
+    const skillNodes = document.querySelectorAll('.skill-node');
+    const projectCards = document.querySelectorAll('.project-card');
+    skillNodes.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+            const skill = node.dataset.skill;
+            projectCards.forEach(card => {
+                if (card.dataset.skill.includes(skill)) {
+                    card.classList.add('highlighted');
+                }
+            });
+        });
+        node.addEventListener('mouseleave', () => {
+            projectCards.forEach(card => card.classList.remove('highlighted'));
+        });
+    });
+}
+
+function addSmoothScrolling() {
+    document.documentElement.style.scrollBehavior = 'smooth';
+}
+
+function addParallaxEffect() {
+    // Disable parallax on mobile/tablet to prevent scroll jank
+    if (window.innerWidth <= 900) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        const dataViz = document.getElementById('dataVisualization');
+        if (dataViz) {
+            dataViz.style.transform = `translateY(${rate}px)`;
+        }
+    });
+}
+
+// Scroll indicator click functionality
+function initScrollIndicator() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const experienceSection = document.querySelector('.experience');
+
+    if (scrollIndicator && experienceSection) {
+        scrollIndicator.addEventListener('click', () => {
+            experienceSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Hide scroll indicator when scrolled
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '0.7';
+            }
+        });
     }
-  });
-}, { threshold: 0.
+}
+
+// Experience Section Animation
+function initExperienceAnimation() {
+    const experienceItems = document.querySelectorAll('.experience-item');
+
+    if (experienceItems.length === 0) {
+        console.warn('No experience items found');
+        return;
+    }
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+
+    experienceItems.forEach(item => {
+        item.style.animationPlayState = 'paused';
+        observer.observe(item);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initProjectCards();
+    initSkillShowcase();
+    addSmoothScrolling();
+    addParallaxEffect();
+    initScrollIndicator();
+    initExperienceAnimation();
+    console.log('Portfolio loaded successfully!');
+});
