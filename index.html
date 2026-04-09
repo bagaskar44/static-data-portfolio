@@ -3,230 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dafa Fajar Bagaskara — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/Favicon.png">
-    
     <link rel="stylesheet" href="style.css">
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Dafa Fajar Bagaskara</h1>
-                <p>I’m an Information Systems student passionate about data analysis and artificial intelligence, especially Agentic AI, NLP, and Deep Learning. With a strong data foundation, I aim to explore how AI can drive meaningful impact and create a better world.</p>
-            </div>
-            <div class="data-viz" id="dataVisualization">
-                <img src="static/Profile.jpg" alt="Photo">
-            </div>
-        </section>
 
-        <div class="scroll-indicator">
-            <span>Scroll Me</span>
+    <!-- Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <span class="nav-name">DFB</span>
+        <div class="nav-links">
+            <a href="#experiences">Experiences</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-eyebrow">
+            <span class="dot"></span>
+            <span>Information Systems — Airlangga University</span>
         </div>
 
-        <section class="experience">
-            <h2 class="section-title">Experiences</h2>
-            <div class="experience-timeline">
-
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-photos">
-                        <div class="experience-photo">
-                            <img src="static/Jasa Raharja 1.jpg" alt="Jasa Raharja 1">
-                        </div>
-                        <div class="experience-photo">
-                            <img src="static/Jasa Raharja 2.png" alt="Jasa Raharja 2">
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Data Engineer and Analyst Intern</h3>
-                            <h4 class="experience-company">Jasa Raharja</h4>
-                            <p class="experience-date">October 2025 - Now</p>
-                        </div>
-                        <p class="experience-description">
-                            Contribute to improving the efficiency of data processing and analysis in the workplace by developing digital solutions to minimize manual work and speed up workflows.
-                        </p>
-                        <div class="experience-skills">
-                            <span class="experience-skill">Data ETL</span>
-                            <span class="experience-skill">Python</span>
-                            <span class="experience-skill">Analytical Skills</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-photos">
-                        <div class="experience-photo">
-                            <img src="static/TND 4.jpg" alt="Training Development 1">
-                        </div>
-                        <div class="experience-photo">
-                            <img src="static/TND 3.jpg" alt="Training Development 2">
-                        </div>
-                        <div class="experience-photo">
-                            <img src="static/TND 4.png" alt="Training Development 3">
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Associate of Training and Development</h3>
-                            <h4 class="experience-company">Develop Indonesia</h4>
-                            <p class="experience-date">March 2025 - Now</p>
-                        </div>
-                        <p class="experience-description">
-                            Contribute to the design of career and hard skills development events, starting with the initial concept, developing a structured curriculum, coordinating presenters, and preparing all technical aspects to ensure the smooth and effective implementation.
-                        </p>
-                        <div class="experience-skills">
-                            <span class="experience-skill">Research Skills</span>
-                            <span class="experience-skill">Problem Solving</span>
-                            <span class="experience-skill">Event Planning</span>
-                            <span class="experience-skill">Team Work</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-photos">
-                        <div class="experience-photo">
-                            <img src="static/Analyst 2.jpeg" alt="Research Activity 1">
-                        </div>
-                        <div class="experience-photo">
-                            <img src="static/Analyst 1.jpeg" alt="Research Activity 2">
-                        </div>
-                        <div class="experience-photo">
-                            <img src="static/Analyst 3.JPG" alt="Research Activity 3">
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Analyst Expert Staff - PENGMAS 2025</h3>
-                            <h4 class="experience-company">Association of Information Systems Undergraduate Students, Airlangga University</h4>
-                            <p class="experience-date">March 2025 - June 2025</p>
-                        </div>
-                        <p class="experience-description">
-                            Collaborative research and community service material development, as well as assessing participants' Business Model Canvas work based on a team-determined assessment rubric. Successfully organized an event attended by 60 participants at a high school in Surabaya.
-                        </p>
-                        <div class="experience-skills">
-                            <span class="experience-skill">Research Skills</span>
-                            <span class="experience-skill">Teamwork</span>
-                            <span class="experience-skill">Problem Solving</span>
-                            <span class="experience-skill">Microsoft Office</span>
-                        </div>
-                    </div>
+        <div class="hero-main">
+            <h1>
+                <span class="line-wrap"><em>Dafa</em> Fajar</span>
+                <span class="line-wrap">Bagaskara</span>
+            </h1>
+            <div class="hero-aside">
+                <p>Passionate about data analysis and artificial intelligence — especially <strong>Agentic AI</strong>, <strong>NLP</strong>, and <strong>Deep Learning</strong>. Building toward a future where AI creates meaningful impact.</p>
+                <div class="hero-tags">
+                    <span>Data Engineer</span>
+                    <span>AI Enthusiast</span>
+                    <span>Analyst</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <article class="project-card" data-skill="python sql analytic solving powerbi details">
-                    <div class="project-content">
-                        <div>
-                            <h3>Data-Driven Insights on Freelancer Marketplace</h3>
-                            <p>Uncover trends, patterns, and factors that influence earnings, job success rates, and client satisfaction.</p>
-                        </div>
-                        <div class="project-details">
-                            <p>The analysis is conducted descriptively, diagnostically, and predictively to provide strategic insights and predict the most profitable jobs.</p>
-                            <button class="demo-button" onclick="window.open('https://dfbagaskara.substack.com/p/decoding-freelance-success-data-driven?r=69x2eo', '_blank')">
-                                See Details
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" data-skill="sql python excel analytic solving details">
-                    <div class="project-content">
-                        <div>
-                            <h3>Aspect-Based Sentiment Analysis on iPhone Reviews</h3>
-                            <p>Aims to uncover actionable insights for guiding data-driven product improvements and marketing strategies.</p>
-                        </div>
-                        <div class="project-details">
-                            <p>Analyzes user reviews of the iPhone 13 and 14. The goal is to identify the most praised and criticized features, compare user sentiment, and track any improvements or persistent issues across generations.</p>
-                            <button class="demo-button" onclick="window.open('https://dfbagaskara.substack.com/p/beyond-the-hype-what-iphone-13-and', '_blank')">
-                                See Details
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" data-skill="python tableau sql analytic solving details excel">
-                    <div class="project-content">
-                        <div>
-                            <h3>E-Commerce Analysis and Dashboard</h3>
-                            <p>Digging insights based on E-Commerce data to provide actionable recommendations and innovations.</p>
-                        </div>
-                        <div class="project-details">
-                            <p>Involved data collection, cleaning, exploratory data analysis, and visualization to uncover key trends. Developed a Streamlit dashboard to present the findings in an interactive and user-friendly format.</p>
-                            <button class="demo-button" onclick="window.open('https://e-commercedashboardidcamp.streamlit.app/', '_blank')">
-                                Live Demo
-                            </button>
-                        </div>
-                    </div>
-                </article>
+        <div class="hero-bottom">
+            <div class="hero-photo-container">
+                <img src="static/Profile.jpg" alt="Dafa Fajar Bagaskara" class="hero-photo">
+                <div class="hero-photo-label">Jakarta, Indonesia · 2025</div>
             </div>
-        </section>
-
-        <section class="skills">
-            <h2 class="section-title">Software and Soft Skills</h2>
-            <div class="skill-constellation">
-                <button class="skill-node" data-skill="sql">SQL</button>
-                <button class="skill-node" data-skill="powerbi">BI Software (Tableau/Power BI)</button>
-                <button class="skill-node" data-skill="python">Python</button>
-                <button class="skill-node" data-skill="excel">Spreadsheet Tools</button>
-                <button class="skill-node" data-skill="analytic">Analytical Skill</button>
-                <button class="skill-node" data-skill="details">Critical Thinking</button>
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Dafa Fajar Bagaskara</h3>
-                    <p>Data and AI Enthusiast.</p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dafabagaskara893@gmail.com&su=From%20Portfolio%20Website&body=Hi%20Dafa,%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." class="social-link" title="Email" target="_blank">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/dafa-fajar-bagaskara-0baa93284/" class="social-link" title="LinkedIn" target="_blank">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                        </svg>
-                    </a>
+    <!-- Experiences -->
+    <section class="experiences" id="experiences">
+        <div class="section-label">
+            <span>01</span>
+            <span>Featured Experiences</span>
+        </div>
 
-                    <a href="https://github.com/bagaskar44" class="social-link" title="GitHub" target="_blank">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                        </svg>
-                    </a>
-                    
-                    <a href="https://wa.me/6282133588149" class="social-link" title="WhatsApp" target="_blank">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
-                        </svg>
-                    </a>
-                    
-                    <a href="https://www.instagram.com/dfabgskara/?utm_source=ig_web_button_share_sheet" class="social-link" title="Instagram" target="_blank">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
-                        </svg>
+        <!-- Experience 1 -->
+        <div class="exp-block exp-block--right">
+            <div class="exp-photos">
+                <div class="exp-photo exp-photo--large">
+                    <img src="static/Jasa Raharja 1.jpg" alt="Jasa Raharja">
+                </div>
+                <div class="exp-photo exp-photo--small">
+                    <img src="static/Jasa Raharja 2.png" alt="Jasa Raharja 2">
+                </div>
+            </div>
+            <div class="exp-content">
+                <div class="exp-meta">
+                    <span class="exp-period">Oct 2025 — Now</span>
+                    <span class="exp-status exp-status--active">Active</span>
+                </div>
+                <h2 class="exp-title">Data Engineer<br>&amp; Analyst <em>Intern</em></h2>
+                <h3 class="exp-company">Jasa Raharja</h3>
+                <p class="exp-desc">Improving efficiency of data processing and analysis by developing digital solutions to minimize manual work and accelerate workflows across departments.</p>
+                <div class="exp-skills">
+                    <span>Data ETL</span><span>Python</span><span>Analytical Skills</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-divider"></div>
+
+        <!-- Experience 2 -->
+        <div class="exp-block exp-block--left">
+            <div class="exp-content">
+                <div class="exp-meta">
+                    <span class="exp-period">Mar 2025 — Now</span>
+                    <span class="exp-status exp-status--active">Active</span>
+                </div>
+                <h2 class="exp-title">Associate of Training<br>&amp; <em>Development</em></h2>
+                <h3 class="exp-company">Develop Indonesia</h3>
+                <p class="exp-desc">Designing career and hard skill development events — from initial concept to structured curriculum, presenter coordination, and full technical execution.</p>
+                <div class="exp-skills">
+                    <span>Research Skills</span><span>Event Planning</span><span>Teamwork</span>
+                </div>
+            </div>
+            <div class="exp-photos">
+                <div class="exp-photo exp-photo--large">
+                    <img src="static/TND 4.jpg" alt="Develop Indonesia">
+                </div>
+                <div class="exp-photo exp-photo--small">
+                    <img src="static/TND 3.jpg" alt="Develop Indonesia 2">
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-divider"></div>
+
+        <!-- Experience 3 -->
+        <div class="exp-block exp-block--right">
+            <div class="exp-photos">
+                <div class="exp-photo exp-photo--large">
+                    <img src="static/Analyst 2.jpeg" alt="PENGMAS">
+                </div>
+                <div class="exp-photo exp-photo--small">
+                    <img src="static/Analyst 1.jpeg" alt="PENGMAS 2">
+                </div>
+            </div>
+            <div class="exp-content">
+                <div class="exp-meta">
+                    <span class="exp-period">Mar 2025 — Jun 2025</span>
+                    <span class="exp-status exp-status--done">Completed</span>
+                </div>
+                <h2 class="exp-title">Analyst Expert Staff<br><em>PENGMAS 2025</em></h2>
+                <h3 class="exp-company">HIMASISFO Airlangga University</h3>
+                <p class="exp-desc">Led collaborative research and community service material development. Assessed Business Model Canvas work for 60 participants at a Surabaya high school event.</p>
+                <div class="exp-skills">
+                    <span>Research Skills</span><span>Problem Solving</span><span>Microsoft Office</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="section-label">
+            <span>02</span>
+            <span>Featured Projects</span>
+        </div>
+
+        <div class="projects-list">
+
+            <div class="project-item" data-href="https://dfbagaskara.substack.com/p/decoding-freelance-success-data-driven?r=69x2eo">
+                <div class="project-number">001</div>
+                <div class="project-info">
+                    <div class="project-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>Analytics</span></div>
+                    <h3 class="project-title">Data-Driven Insights on<br>Freelancer Marketplace</h3>
+                    <p class="project-desc">Uncovering trends, patterns, and factors influencing earnings, job success rates, and client satisfaction — descriptive, diagnostic, and predictive.</p>
+                </div>
+                <div class="project-cta">
+                    <a href="https://dfbagaskara.substack.com/p/decoding-freelance-success-data-driven?r=69x2eo" target="_blank" class="cta-arrow" onclick="event.stopPropagation()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                     </a>
                 </div>
+            </div>
+
+            <div class="project-item" data-href="https://dfbagaskara.substack.com/p/beyond-the-hype-what-iphone-13-and">
+                <div class="project-number">002</div>
+                <div class="project-info">
+                    <div class="project-tags"><span>NLP</span><span>Python</span><span>Sentiment Analysis</span></div>
+                    <h3 class="project-title">Aspect-Based Sentiment<br>Analysis on iPhone Reviews</h3>
+                    <p class="project-desc">Identifying most praised and criticized iPhone 13/14 features, comparing user sentiment, and tracking improvements across generations.</p>
+                </div>
+                <div class="project-cta">
+                    <a href="https://dfbagaskara.substack.com/p/beyond-the-hype-what-iphone-13-and" target="_blank" class="cta-arrow" onclick="event.stopPropagation()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-item" data-href="https://e-commercedashboardidcamp.streamlit.app/">
+                <div class="project-number">003</div>
+                <div class="project-info">
+                    <div class="project-tags"><span>Python</span><span>Tableau</span><span>Streamlit</span><span>SQL</span></div>
+                    <h3 class="project-title">E-Commerce Analysis<br>&amp; Dashboard</h3>
+                    <p class="project-desc">Full-cycle analysis: data collection, cleaning, EDA, and visualization — delivered as an interactive Streamlit dashboard with actionable recommendations.</p>
+                </div>
+                <div class="project-cta">
+                    <a href="https://e-commercedashboardidcamp.streamlit.app/" target="_blank" class="cta-arrow" onclick="event.stopPropagation()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills-section">
+        <div class="skills-inner">
+            <p class="skills-label">Core Skills</p>
+            <div class="skills-ticker">
+                <div class="ticker-track">
+                    <span>SQL</span><span>/</span>
+                    <span>Python</span><span>/</span>
+                    <span>Power BI &amp; Tableau</span><span>/</span>
+                    <span>Spreadsheet Tools</span><span>/</span>
+                    <span>Analytical Thinking</span><span>/</span>
+                    <span>Critical Thinking</span><span>/</span>
+                    <span>SQL</span><span>/</span>
+                    <span>Python</span><span>/</span>
+                    <span>Power BI &amp; Tableau</span><span>/</span>
+                    <span>Spreadsheet Tools</span><span>/</span>
+                    <span>Analytical Thinking</span><span>/</span>
+                    <span>Critical Thinking</span><span>/</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <h2 class="footer-heading">Let's <em>connect</em><br>and build something.</h2>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dafabagaskara893@gmail.com&su=From%20Portfolio%20Website&body=Hi%20Dafa,%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." target="_blank" class="footer-email">dafabagaskara893@gmail.com</a>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2025 Dafa Fajar Bagaskara</span>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/dafa-fajar-bagaskara-0baa93284/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/bagaskar44" target="_blank">GitHub</a>
+                <a href="https://wa.me/6282133588149" target="_blank">WhatsApp</a>
+                <a href="https://www.instagram.com/dfabgskara/" target="_blank">Instagram</a>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // Project items click
+    document.querySelectorAll('.project-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const href = item.dataset.href;
+            if (href) window.open(href, '_blank');
+        });
+    });
+
+    // Nav scroll effect
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+    });
+
+    // Intersection observer for reveals
+    const reveals = document.querySelectorAll('.exp-block, .project-item');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
