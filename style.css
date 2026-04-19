@@ -64,7 +64,7 @@ body > *:not(#bg-canvas):not(.grain) { position: relative; z-index: 2; }
     z-index: 200;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px 52px;
     transition: background 0.4s var(--ease), border-color 0.4s var(--ease), padding 0.4s var(--ease);
     border-bottom: 1px solid transparent;
