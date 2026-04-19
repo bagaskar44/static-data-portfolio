@@ -584,7 +584,7 @@ h1 .h1-row:last-child {
 
 .project-row {
     display: grid;
-    grid-template-columns: 80px 1fr 56px;
+    grid-template-columns: 1fr 56px;
     gap: 32px;
     align-items: center;
     padding: 32px 0;
