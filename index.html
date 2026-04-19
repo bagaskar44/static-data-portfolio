@@ -4,25 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dafa Fajar Bagaskara — Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/Favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Noise overlay -->
-    <div class="noise"></div>
-
-    <!-- Ambient blobs -->
-    <div class="ambient">
-        <div class="blob blob--1"></div>
-        <div class="blob blob--2"></div>
-        <div class="blob blob--3"></div>
-    </div>
+    <!-- Canvas background -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="grain"></div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <div class="nav-logo">DFB<span>.</span></div>
+        <div class="nav-logo">DFB<span class="nav-logo-dot">.</span></div>
         <div class="nav-links">
             <a href="#experiences">Experiences</a>
             <a href="#achievements">Achievements</a>
@@ -31,261 +25,256 @@
         </div>
         <div class="nav-status">
             <span class="status-dot"></span>
-            <span>Available for work</span>
+            <span>Open to work</span>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-grid">
+        <div class="hero-tag-row">
+            <div class="hero-tag"><span class="tag-line"></span>Information Systems — Airlangga University</div>
+            <div class="hero-tag hero-tag--right">Surabaya, Indonesia · 2026<span class="tag-line"></span></div>
+        </div>
 
-            <div class="hero-left">
-                <div class="hero-eyebrow">
-                    <span class="eyebrow-line"></span>
-                    <span>Information Systems · Airlangga University</span>
-                </div>
-
-                <h1 class="hero-name">
-                    <span class="name-line"><em>Dafa</em> Fajar</span>
-                    <span class="name-line">Bagaskara</span>
-                </h1>
-
-                <div class="hero-role">
-                    <span>Data</span>
-                    <div class="role-flip">
-                        <span>Analyst</span>
-                        <span>Engineer</span>
-                        <span>Storyteller</span>
-                    </div>
-                </div>
+        <div class="hero-center">
+            <div class="hero-overline">
+                <span>Data</span>
+                <div class="overline-bar"></div>
+                <span>Analyst</span>
             </div>
-
-            <div class="hero-right">
-                <p class="hero-desc">Data analyst with hands-on experience in <strong>ETL pipelines</strong>, <strong>industrial data processing</strong>, and <strong>professional dashboard reporting</strong> — leveraging <strong>Python</strong>, <strong>Power BI</strong>, and <strong>Spreadsheet Tools</strong> to turn data into meaningful business decisions.</p>
-
-                <div class="hero-pills">
-                    <span>Business Intelligence</span>
-                    <span>Data Analyst</span>
-                    <span>Data Processing</span>
+            <h1>
+                <span class="h1-row">
+                    <em class="italic-name">Dafa</em>
+                    <span class="h1-thin">Fajar</span>
+                </span>
+                <span class="h1-row h1-row--indent">Bagaskara</span>
+            </h1>
+            <div class="hero-descriptor">
+                <div class="descriptor-bracket">
+                    <svg width="14" height="40" viewBox="0 0 14 40"><path d="M12 0 L2 0 L2 40 L12 40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
                 </div>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-num">3+</span>
-                        <span class="stat-label">Internships &<br>Org Roles</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-num">5+</span>
-                        <span class="stat-label">Data<br>Projects</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-num">2+</span>
-                        <span class="stat-label">Years<br>Experience</span>
-                    </div>
-                </div>
+                <p>ETL Pipelines · Industrial Data Processing · Dashboard Reporting<br>
+                <strong>Python</strong> · <strong>Power BI</strong> · <strong>Spreadsheet Tools</strong></p>
             </div>
-
         </div>
 
         <div class="hero-footer">
-            <span class="hero-location">📍 Surabaya, Indonesia · 2026</span>
+            <div class="hero-chips">
+                <span>Business Intelligence</span>
+                <span>Data Analyst</span>
+                <span>Data Processing</span>
+            </div>
             <div class="hero-scroll-hint">
-                <div class="scroll-track">
-                    <div class="scroll-thumb"></div>
-                </div>
                 <span>Scroll</span>
+                <div class="scroll-track"><div class="scroll-thumb"></div></div>
+            </div>
+        </div>
+
+        <!-- Floating data viz decoration -->
+        <div class="hero-deco" aria-hidden="true">
+            <div class="deco-card deco-card--1">
+                <div class="deco-label">Efficiency</div>
+                <div class="deco-bars">
+                    <div class="deco-bar" style="--h:60%"></div>
+                    <div class="deco-bar" style="--h:85%"></div>
+                    <div class="deco-bar" style="--h:45%"></div>
+                    <div class="deco-bar" style="--h:95%"></div>
+                    <div class="deco-bar" style="--h:70%"></div>
+                </div>
+                <div class="deco-value">+38%</div>
+            </div>
+            <div class="deco-card deco-card--2">
+                <div class="deco-ring">
+                    <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="30" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/><circle cx="40" cy="40" r="30" fill="none" stroke="rgba(99,179,237,0.7)" stroke-width="8" stroke-dasharray="130 60" stroke-dashoffset="-10" stroke-linecap="round"/></svg>
+                    <span class="ring-value">68%</span>
+                </div>
+                <div class="deco-label">Accuracy</div>
             </div>
         </div>
     </section>
 
-    <!-- Experiences -->
-    <section class="experiences section" id="experiences">
-        <div class="section-head">
-            <div class="section-index">01</div>
+    <!-- ── EXPERIENCES ────────────────────────────── -->
+    <section class="section experiences" id="experiences">
+        <div class="section-header">
+            <div class="section-number">01</div>
             <h2 class="section-title">Featured <em>Experiences</em></h2>
+            <div class="section-rule"></div>
         </div>
 
-        <div class="exp-list">
-
-            <!-- Exp 1 -->
-            <article class="exp-card reveal">
-                <div class="exp-card-inner">
-                    <div class="exp-media">
-                        <div class="exp-img exp-img--main">
-                            <img src="static/Jasa Raharja 1.jpg" alt="Jasa Raharja">
-                        </div>
-                        <div class="exp-img exp-img--sub">
-                            <img src="static/Jasa Raharja 2.png" alt="Jasa Raharja 2">
-                        </div>
-                        <div class="exp-media-label">PT Jasa Raharja · 2025</div>
-                    </div>
-                    <div class="exp-body">
-                        <div class="exp-meta">
-                            <span class="exp-period">Oct 2025 — Now</span>
-                            <span class="badge badge--active">Active</span>
-                        </div>
-                        <h3 class="exp-role">Data Engineer<br>& Analyst <em>Intern</em></h3>
-                        <div class="exp-org">Jasa Raharja</div>
-                        <p class="exp-desc">Developed a Python-based automation tool to extract insurance data from multi-format PDFs into structured Excel files, incorporating data processing pipelines to standardize inconsistent source formats and prepare clean, analysis-ready datasets, reducing manual data handling workload.</p>
-                        <div class="exp-tags">
-                            <span>Data ETL</span><span>Python</span><span>Analytical Skills</span>
-                        </div>
-                    </div>
+        <!-- Exp 1 -->
+        <article class="exp-card reveal" data-align="right">
+            <div class="exp-media">
+                <div class="exp-img exp-img--large">
+                    <img src="static/Jasa Raharja 1.jpg" alt="Jasa Raharja">
                 </div>
-            </article>
-
-            <!-- Exp 2 -->
-            <article class="exp-card exp-card--flip reveal">
-                <div class="exp-card-inner">
-                    <div class="exp-body">
-                        <div class="exp-meta">
-                            <span class="exp-period">Mar 2025 — Now</span>
-                            <span class="badge badge--active">Active</span>
-                        </div>
-                        <h3 class="exp-role">Associate of Training<br>& <em>Development</em></h3>
-                        <div class="exp-org">Develop Indonesia</div>
-                        <p class="exp-desc">Contributed to the end-to-end development of a professional Excel training program for 30 participants, covering curriculum design, speaker coordination, and technical preparation to ensure smooth execution.</p>
-                        <div class="exp-tags">
-                            <span>Research Skills</span><span>Event Planning</span><span>Teamwork</span>
-                        </div>
-                    </div>
-                    <div class="exp-media">
-                        <div class="exp-img exp-img--main">
-                            <img src="static/TND 4.jpg" alt="Develop Indonesia">
-                        </div>
-                        <div class="exp-img exp-img--sub">
-                            <img src="static/TND 3.jpg" alt="Develop Indonesia 2">
-                        </div>
-                        <div class="exp-media-label">Develop Indonesia · 2025</div>
-                    </div>
+                <div class="exp-img exp-img--small">
+                    <img src="static/Jasa Raharja 2.png" alt="Jasa Raharja">
                 </div>
-            </article>
-
-            <!-- Exp 3 -->
-            <article class="exp-card reveal">
-                <div class="exp-card-inner">
-                    <div class="exp-media">
-                        <div class="exp-img exp-img--main">
-                            <img src="static/Analyst 2.jpeg" alt="PENGMAS">
-                        </div>
-                        <div class="exp-img exp-img--sub">
-                            <img src="static/Analyst 1.jpeg" alt="PENGMAS 2">
-                        </div>
-                        <div class="exp-media-label">HIMASISFO UNAIR · 2025</div>
-                    </div>
-                    <div class="exp-body">
-                        <div class="exp-meta">
-                            <span class="exp-period">Mar 2025 — Jun 2025</span>
-                            <span class="badge badge--done">Completed</span>
-                        </div>
-                        <h3 class="exp-role">Analyst Expert Staff<br><em>PENGMAS 2025</em></h3>
-                        <div class="exp-org">HIMASISFO Airlangga University</div>
-                        <p class="exp-desc">Contributed to research and material development for a community service program equipping 60 high school students with business competition fundamentals, covering Business Case, Business Plan, and Business Model Canvas (BMC).</p>
-                        <div class="exp-tags">
-                            <span>Research Skills</span><span>Problem Solving</span><span>Microsoft Office</span>
-                        </div>
-                    </div>
+                <div class="exp-img-badge">Oct 2025 — Now</div>
+            </div>
+            <div class="exp-body">
+                <span class="exp-status exp-status--live">● Active</span>
+                <h3 class="exp-role">Data Engineer<br>&amp; Analyst <em>Intern</em></h3>
+                <p class="exp-company">Jasa Raharja</p>
+                <p class="exp-desc">Developed a Python-based automation tool to extract insurance data from multi-format PDFs into structured Excel files, incorporating data processing pipelines to standardize inconsistent source formats and prepare clean, analysis-ready datasets, reducing manual data handling workload.</p>
+                <div class="exp-tags">
+                    <span>Data ETL</span><span>Python</span><span>Analytical Skills</span>
                 </div>
-            </article>
+            </div>
+        </article>
 
-        </div>
+        <div class="exp-sep"></div>
+
+        <!-- Exp 2 -->
+        <article class="exp-card exp-card--flip reveal" data-align="left">
+            <div class="exp-media">
+                <div class="exp-img exp-img--large">
+                    <img src="static/TND 4.jpg" alt="Develop Indonesia">
+                </div>
+                <div class="exp-img exp-img--small">
+                    <img src="static/TND 3.jpg" alt="Develop Indonesia">
+                </div>
+                <div class="exp-img-badge">Mar 2025 — Now</div>
+            </div>
+            <div class="exp-body">
+                <span class="exp-status exp-status--live">● Active</span>
+                <h3 class="exp-role">Associate of Training<br>&amp; <em>Development</em></h3>
+                <p class="exp-company">Develop Indonesia</p>
+                <p class="exp-desc">Contributed to the end-to-end development of a professional Excel training program for 30 participants, covering curriculum design, speaker coordination, and technical preparation to ensure smooth execution.</p>
+                <div class="exp-tags">
+                    <span>Research Skills</span><span>Event Planning</span><span>Teamwork</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="exp-sep"></div>
+
+        <!-- Exp 3 -->
+        <article class="exp-card reveal" data-align="right">
+            <div class="exp-media">
+                <div class="exp-img exp-img--large">
+                    <img src="static/Analyst 2.jpeg" alt="PENGMAS">
+                </div>
+                <div class="exp-img exp-img--small">
+                    <img src="static/Analyst 1.jpeg" alt="PENGMAS">
+                </div>
+                <div class="exp-img-badge">Mar — Jun 2025</div>
+            </div>
+            <div class="exp-body">
+                <span class="exp-status exp-status--done">✓ Completed</span>
+                <h3 class="exp-role">Analyst Expert Staff<br><em>PENGMAS 2025</em></h3>
+                <p class="exp-company">HIMASISFO Airlangga University</p>
+                <p class="exp-desc">Contributed to research and material development for a community service program equipping 60 high school students with business competition fundamentals, covering Business Case, Business Plan, and Business Model Canvas. Assessed participants' BMC outputs using a structured rubric developed collaboratively with the team.</p>
+                <div class="exp-tags">
+                    <span>Research Skills</span><span>Problem Solving</span><span>Microsoft Office</span>
+                </div>
+            </div>
+        </article>
     </section>
 
-    <!-- Achievements -->
-    <section class="achievements section" id="achievements">
-        <div class="section-head">
-            <div class="section-index">02</div>
+    <!-- ── ACHIEVEMENTS ───────────────────────────── -->
+    <section class="section achievements" id="achievements">
+        <div class="section-header">
+            <div class="section-number">02</div>
             <h2 class="section-title">Featured <em>Achievements</em></h2>
+            <div class="section-rule"></div>
         </div>
 
-        <div class="ach-grid">
+        <div class="achievements-grid">
 
-            <div class="ach-card ach-card--large reveal">
-                <div class="ach-icon">🏆</div>
+            <div class="ach-card reveal">
+                <div class="ach-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5"/><path d="M24 12 L27.5 20 L37 21 L30 27.5 L32 37 L24 32.5 L16 37 L18 27.5 L11 21 L20.5 20 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
                 <div class="ach-body">
-                    <span class="ach-year">2024</span>
-                    <h3 class="ach-title">Top Participant — ID/X Partners Data Science Bootcamp</h3>
-                    <p class="ach-desc">Recognized among top participants for delivering a full-cycle e-commerce analysis project with an interactive Streamlit dashboard — from data cleaning and EDA to predictive modeling and business recommendations.</p>
-                    <div class="ach-tags"><span>Data Science</span><span>Python</span><span>Streamlit</span></div>
+                    <div class="ach-meta">Dicoding · 2024</div>
+                    <h3 class="ach-title">IDCamp Data Analyst<br>Learning Path</h3>
+                    <p class="ach-desc">Completed an intensive data analytics program covering Python, SQL, data visualization, and end-to-end project deployment via Streamlit.</p>
+                    <div class="ach-badge">Certificate of Completion</div>
                 </div>
             </div>
 
             <div class="ach-card reveal">
-                <div class="ach-icon">📊</div>
+                <div class="ach-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M16 28 L20 22 L25 26 L30 18 L34 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
                 <div class="ach-body">
-                    <span class="ach-year">2025</span>
-                    <h3 class="ach-title">Published Analytics Author on Substack</h3>
-                    <p class="ach-desc">Self-published data analysis articles covering sentiment analysis, freelancer marketplace insights, and business intelligence — reaching a growing audience of data enthusiasts.</p>
-                    <div class="ach-tags"><span>Writing</span><span>Analytics</span><span>NLP</span></div>
+                    <div class="ach-meta">HIMASISFO UNAIR · 2025</div>
+                    <h3 class="ach-title">Best Analyst Staff<br>PENGMAS 2025</h3>
+                    <p class="ach-desc">Recognized as the best-performing analyst staff in the community service program, leading research development and participant assessment design.</p>
+                    <div class="ach-badge">Internal Award</div>
                 </div>
             </div>
 
             <div class="ach-card reveal">
-                <div class="ach-icon">🎓</div>
+                <div class="ach-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><path d="M24 6 L28 16 L39 16 L30.5 23 L33.5 34 L24 28 L14.5 34 L17.5 23 L9 16 L20 16 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
                 <div class="ach-body">
-                    <span class="ach-year">2025</span>
-                    <h3 class="ach-title">Certified — Google Data Analytics Professional</h3>
-                    <p class="ach-desc">Completed the rigorous Google Data Analytics certification program, mastering data cleaning, analysis, visualization, and storytelling with real-world capstone projects.</p>
-                    <div class="ach-tags"><span>Google</span><span>Certification</span><span>SQL</span></div>
+                    <div class="ach-meta">Develop Indonesia · 2025</div>
+                    <h3 class="ach-title">Excel Training<br>Program Co-Creator</h3>
+                    <p class="ach-desc">Co-developed and executed a professional Microsoft Excel training program from the ground up, serving 30 participants with structured curriculum and expert speakers.</p>
+                    <div class="ach-badge">Program Recognition</div>
                 </div>
             </div>
 
             <div class="ach-card reveal">
-                <div class="ach-icon">⚡</div>
+                <div class="ach-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><path d="M10 38 L10 20 L18 20 L18 38 M20 38 L20 14 L28 14 L28 38 M30 38 L30 24 L38 24 L38 38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
                 <div class="ach-body">
-                    <span class="ach-year">2025</span>
-                    <h3 class="ach-title">ETL Pipeline Automation — Jasa Raharja</h3>
-                    <p class="ach-desc">Built a fully automated ETL pipeline reducing manual PDF data extraction workload significantly, deployed in production at PT Jasa Raharja's regional office.</p>
-                    <div class="ach-tags"><span>ETL</span><span>Automation</span><span>Python</span></div>
+                    <div class="ach-meta">Substack · 2024–2025</div>
+                    <h3 class="ach-title">Published Data<br>Analysis Articles</h3>
+                    <p class="ach-desc">Authored multiple data analysis case studies on Substack, covering freelancer marketplace trends, iPhone sentiment analysis, and e-commerce analytics.</p>
+                    <div class="ach-badge">Public Portfolio</div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Projects -->
-    <section class="projects section" id="projects">
-        <div class="section-head">
-            <div class="section-index">03</div>
+    <!-- ── PROJECTS ───────────────────────────────── -->
+    <section class="section projects" id="projects">
+        <div class="section-header">
+            <div class="section-number">03</div>
             <h2 class="section-title">Featured <em>Projects</em></h2>
+            <div class="section-rule"></div>
         </div>
 
-        <div class="proj-list">
+        <div class="projects-list">
 
-            <a class="proj-item reveal" href="https://dfbagaskara.substack.com/p/decoding-freelance-success-data-driven?r=69x2eo" target="_blank">
-                <div class="proj-num">001</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>Analytics</span></div>
-                    <h3 class="proj-title">Data-Driven Insights on<br>Freelancer Marketplace</h3>
-                    <p class="proj-desc">Uncovering trends, patterns, and factors influencing earnings, job success rates, and client satisfaction — descriptive, diagnostic, and predictive.</p>
+            <a class="project-row reveal" href="https://dfbagaskara.substack.com/p/decoding-freelance-success-data-driven?r=69x2eo" target="_blank">
+                <div class="pr-index">001</div>
+                <div class="pr-info">
+                    <div class="pr-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>Analytics</span></div>
+                    <h3 class="pr-title">Data-Driven Insights on<br>Freelancer Marketplace</h3>
+                    <p class="pr-desc">Uncovering trends, patterns, and factors influencing earnings, job success rates, and client satisfaction — descriptive, diagnostic, and predictive.</p>
                 </div>
-                <div class="proj-arrow">
+                <div class="pr-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </div>
             </a>
 
-            <a class="proj-item reveal" href="https://dfbagaskara.substack.com/p/beyond-the-hype-what-iphone-13-and" target="_blank">
-                <div class="proj-num">002</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>NLP</span><span>Python</span><span>Sentiment Analysis</span></div>
-                    <h3 class="proj-title">Aspect-Based Sentiment<br>Analysis on iPhone Reviews</h3>
-                    <p class="proj-desc">Identifying most praised and criticized iPhone 13/14 features, comparing user sentiment, and tracking improvements across generations.</p>
+            <a class="project-row reveal" href="https://dfbagaskara.substack.com/p/beyond-the-hype-what-iphone-13-and" target="_blank">
+                <div class="pr-index">002</div>
+                <div class="pr-info">
+                    <div class="pr-tags"><span>NLP</span><span>Python</span><span>Sentiment Analysis</span></div>
+                    <h3 class="pr-title">Aspect-Based Sentiment<br>Analysis on iPhone Reviews</h3>
+                    <p class="pr-desc">Identifying most praised and criticized iPhone 13/14 features, comparing user sentiment, and tracking improvements across generations.</p>
                 </div>
-                <div class="proj-arrow">
+                <div class="pr-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </div>
             </a>
 
-            <a class="proj-item reveal" href="https://e-commercedashboardidcamp.streamlit.app/" target="_blank">
-                <div class="proj-num">003</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>Python</span><span>Tableau</span><span>Streamlit</span><span>SQL</span></div>
-                    <h3 class="proj-title">E-Commerce Analysis<br>&amp; Dashboard</h3>
-                    <p class="proj-desc">Full-cycle analysis: data collection, cleaning, EDA, and visualization — delivered as an interactive Streamlit dashboard with actionable recommendations.</p>
+            <a class="project-row reveal" href="https://e-commercedashboardidcamp.streamlit.app/" target="_blank">
+                <div class="pr-index">003</div>
+                <div class="pr-info">
+                    <div class="pr-tags"><span>Python</span><span>Tableau</span><span>Streamlit</span><span>SQL</span></div>
+                    <h3 class="pr-title">E-Commerce Analysis<br>&amp; Dashboard</h3>
+                    <p class="pr-desc">Full-cycle analysis: data collection, cleaning, EDA, and visualization — delivered as an interactive Streamlit dashboard with actionable recommendations.</p>
                 </div>
-                <div class="proj-arrow">
+                <div class="pr-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </div>
             </a>
@@ -293,94 +282,58 @@
         </div>
     </section>
 
-    <!-- Skills ticker -->
+    <!-- ── SKILLS TICKER ──────────────────────────── -->
     <div class="ticker-section">
-        <div class="ticker-label">Core Skills</div>
         <div class="ticker-wrap">
             <div class="ticker-track">
                 <span>SQL</span><span class="sep">/</span>
                 <span>Python</span><span class="sep">/</span>
-                <span>Power BI & Tableau</span><span class="sep">/</span>
+                <span>Power BI</span><span class="sep">/</span>
+                <span>Tableau</span><span class="sep">/</span>
                 <span>Spreadsheet Tools</span><span class="sep">/</span>
-                <span>ETL Pipelines</span><span class="sep">/</span>
                 <span>Analytical Thinking</span><span class="sep">/</span>
                 <span>Critical Thinking</span><span class="sep">/</span>
-                <span>Data Storytelling</span><span class="sep">/</span>
+                <span>ETL Pipelines</span><span class="sep">/</span>
                 <span>SQL</span><span class="sep">/</span>
                 <span>Python</span><span class="sep">/</span>
-                <span>Power BI & Tableau</span><span class="sep">/</span>
+                <span>Power BI</span><span class="sep">/</span>
+                <span>Tableau</span><span class="sep">/</span>
                 <span>Spreadsheet Tools</span><span class="sep">/</span>
-                <span>ETL Pipelines</span><span class="sep">/</span>
                 <span>Analytical Thinking</span><span class="sep">/</span>
                 <span>Critical Thinking</span><span class="sep">/</span>
-                <span>Data Storytelling</span><span class="sep">/</span>
+                <span>ETL Pipelines</span><span class="sep">/</span>
             </div>
         </div>
     </div>
 
-    <!-- Footer / Contact -->
+    <!-- ── CONTACT / FOOTER ───────────────────────── -->
     <footer class="footer" id="contact">
         <div class="footer-inner">
-            <div class="footer-cta">
-                <p class="footer-eyebrow">Let's work together</p>
-                <h2 class="footer-heading">Got a project in<br>mind? Let's <em>talk.</em></h2>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dafabagaskara893@gmail.com&su=From%20Portfolio%20Website&body=Hi%20Dafa,%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." target="_blank" class="footer-btn">
-                    Send a message
+            <div class="footer-left">
+                <p class="footer-sup">04 · Let's connect</p>
+                <h2 class="footer-heading">Ready to turn<br><em>data into decisions?</em></h2>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dafabagaskara893@gmail.com&su=From%20Portfolio%20Website&body=Hi%20Dafa,%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." target="_blank" class="footer-cta">
+                    <span>Send a message</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </a>
-                <div class="footer-email-plain">dafabagaskara893@gmail.com</div>
+                <p class="footer-email-plain">dafabagaskara893@gmail.com</p>
             </div>
-
-            <div class="footer-links">
-                <div class="footer-links-col">
-                    <p class="footer-col-label">Social</p>
-                    <a href="https://www.linkedin.com/in/dafa-fajar-bagaskara-0baa93284/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/bagaskar44" target="_blank">GitHub</a>
-                    <a href="https://wa.me/6282133588149" target="_blank">WhatsApp</a>
-                    <a href="https://www.instagram.com/dfabgskara/" target="_blank">Instagram</a>
-                </div>
-                <div class="footer-links-col">
-                    <p class="footer-col-label">Writing</p>
-                    <a href="https://dfbagaskara.substack.com" target="_blank">Substack</a>
-                </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <p class="footer-nav-label">Connect</p>
+                    <a href="https://www.linkedin.com/in/dafa-fajar-bagaskara-0baa93284/" target="_blank">LinkedIn ↗</a>
+                    <a href="https://github.com/bagaskar44" target="_blank">GitHub ↗</a>
+                    <a href="https://wa.me/6282133588149" target="_blank">WhatsApp ↗</a>
+                    <a href="https://www.instagram.com/dfabgskara/" target="_blank">Instagram ↗</a>
+                </nav>
             </div>
         </div>
-
         <div class="footer-bar">
             <span>© 2026 Dafa Fajar Bagaskara</span>
-            <span>Surabaya, Indonesia</span>
+            <span>Information Systems · Airlangga University</span>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-    // Nav scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('nav--scrolled', window.scrollY > 60);
-    });
-
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('revealed'), i * 80);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Role flip animation
-    const flipItems = document.querySelectorAll('.role-flip span');
-    let current = 0;
-    setInterval(() => {
-        flipItems[current].classList.remove('active');
-        current = (current + 1) % flipItems.length;
-        flipItems[current].classList.add('active');
-    }, 2200);
-    flipItems[0].classList.add('active');
-    </script>
 </body>
 </html>
