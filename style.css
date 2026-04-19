@@ -587,7 +587,7 @@ h1 .h1-row:last-child {
     grid-template-columns: 1fr 56px;
     gap: 32px;
     align-items: center;
-    padding: 32px 0;
+    padding: 32px 20px;
     border-bottom: 1px solid var(--border);
     text-decoration: none;
     position: relative;
@@ -619,6 +619,10 @@ h1 .h1-row:last-child {
     transition: opacity 0.3s;
 }
 .project-row:hover .pr-index { opacity: 1; }
+
+.pr-info {
+    min-width: 0;
+}
 
 .pr-tags {
     display: flex;
