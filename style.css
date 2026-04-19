@@ -230,12 +230,6 @@ h1 .h1-row:last-child {
     max-width: 520px;
 }
 
-.descriptor-bracket {
-    color: var(--blue);
-    flex-shrink: 0;
-    margin-top: 4px;
-}
-
 .hero-descriptor p {
     font-size: 0.95rem;
     font-weight: 400;
