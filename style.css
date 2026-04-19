@@ -1,3 +1,6 @@
+/* ============================================================
+   ROOT & RESET
+   ============================================================ */
 :root {
     --bg:        #060d1a;
     --bg-mid:    #0a1628;
@@ -599,8 +602,8 @@ h1 .h1-row:last-child {
     content: '';
     position: absolute;
     inset: 0;
-    left: -52px;
-    background: linear-gradient(to right, var(--blue-glow) 0%, var(--blue-glow) 60%, transparent 100%);
+    left: -120px;
+    background: linear-gradient(to right, transparent 0%, var(--blue-glow) 80px, var(--blue-glow) 60%, transparent 100%);
     opacity: 0;
     transition: opacity 0.35s;
 }
