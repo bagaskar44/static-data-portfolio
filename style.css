@@ -501,75 +501,170 @@ h1 .h1-row:last-child {
     background: linear-gradient(to bottom, transparent, rgba(59,130,246,0.04), transparent);
 }
 
-.achievements-grid {
+.ach-hero {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.ach-card {
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    border: 1px solid var(--border-bright);
+    border-radius: 16px;
+    overflow: hidden;
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 36px;
+    transition: border-color 0.4s;
+}
+
+.ach-hero:hover { border-color: rgba(59,130,246,0.6); }
+
+.ach-hero-glow {
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Left panel */
+.ach-hero-left {
     display: flex;
-    gap: 28px;
-    transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 48px 32px;
+    border-right: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(59,130,246,0.03));
+    position: relative;
 }
 
-.ach-card:hover {
-    border-color: var(--border-bright);
-    background: rgba(14,30,56,0.9);
-    transform: translateY(-4px);
-}
-
-.ach-icon {
-    flex-shrink: 0;
-    width: 48px; height: 48px;
+.ach-trophy {
     color: var(--blue-2);
-    opacity: 0.7;
+    width: 64px; height: 64px;
+    margin-bottom: 12px;
+    opacity: 0.85;
 }
-.ach-icon svg { width: 100%; height: 100%; }
+.ach-trophy svg { width: 100%; height: 100%; }
 
-.ach-body { flex: 1; }
+.ach-place {
+    font-family: var(--serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: -0.04em;
+}
+.ach-place span {
+    font-size: 2rem;
+    color: var(--blue-2);
+    vertical-align: super;
+}
 
-.ach-meta {
+.ach-place-label {
     font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 10px;
+    color: var(--blue-3);
 }
 
-.ach-title {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--white);
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
+/* Right body */
+.ach-hero-body {
+    padding: 44px 48px;
+    position: relative;
+    z-index: 1;
 }
 
-.ach-desc {
-    font-size: 0.86rem;
+.ach-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.ach-org {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-2);
+}
+
+.ach-dot { color: var(--border-bright); }
+
+.ach-date {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
     color: var(--white-dim);
-    line-height: 1.65;
-    margin-bottom: 18px;
 }
 
-.ach-badge {
-    display: inline-block;
-    font-size: 0.62rem;
+.ach-hero-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+.ach-hero-title em {
+    font-style: italic;
+    color: var(--blue-2);
+}
+
+.ach-hero-role {
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 18px;
+}
+
+.ach-hero-desc {
+    font-size: 0.9rem;
+    color: var(--white-dim);
+    line-height: 1.72;
+    max-width: 580px;
+    margin-bottom: 36px;
+}
+
+/* Stats row */
+.ach-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+}
+
+.ach-stat { flex: 1; padding-right: 32px; }
+
+.ach-stat-value {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 300;
     color: var(--blue-3);
-    border: 1px solid var(--border-bright);
-    padding: 4px 12px;
-    border-radius: 100px;
-    background: var(--blue-glow);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+}
+.ach-stat-value span {
+    font-size: 1.2rem;
+    color: var(--blue-2);
+}
+
+.ach-stat-label {
+    font-size: 0.7rem;
+    color: var(--white-dim);
+    line-height: 1.5;
+    max-width: 160px;
+}
+
+.ach-stat-sep {
+    width: 1px;
+    height: 52px;
+    background: var(--border);
+    flex-shrink: 0;
+    margin-right: 32px;
 }
 
 /* ============================================================
@@ -842,7 +937,13 @@ h1 .h1-row:last-child {
     .exp-media, .exp-card--flip .exp-media, .exp-card:not(.exp-card--flip) .exp-media { padding: 0; }
     .exp-body, .exp-card--flip .exp-body, .exp-card:not(.exp-card--flip) .exp-body { padding: 0; }
     .exp-desc { max-width: 100%; }
-    .achievements-grid { grid-template-columns: 1fr; }
+    .ach-hero { grid-template-columns: 1fr; }
+    .ach-hero-left { border-right: none; border-bottom: 1px solid var(--border); padding: 36px; flex-direction: row; gap: 24px; justify-content: flex-start; }
+    .ach-trophy { margin-bottom: 0; width: 48px; height: 48px; }
+    .ach-hero-body { padding: 32px 28px; }
+    .ach-stats { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .ach-stat-sep { width: 40px; height: 1px; margin-right: 0; }
+    .ach-stat { padding-right: 0; }
     .project-row { grid-template-columns: 56px 1fr 44px; gap: 20px; }
     .footer-inner { grid-template-columns: 1fr; gap: 52px; padding: 72px 28px 60px; }
     .footer-bar { padding: 20px 28px; }
@@ -864,7 +965,8 @@ h1 .h1-row:last-child {
     .exp-media { grid-template-rows: 200px 100px; }
     .project-row { grid-template-columns: 1fr 44px; gap: 16px; }
     .pr-index { display: none; }
-    .ach-card { flex-direction: column; gap: 16px; padding: 28px; }
+    .ach-hero-body { padding: 24px 20px; }
+    .ach-hero-left { padding: 24px 20px; }
     .footer-inner { padding: 60px 20px 48px; }
     .footer-bar { padding: 20px 20px; flex-direction: column; gap: 8px; text-align: center; }
 }
