@@ -1,31 +1,21 @@
-// Project card interaction functionality
-function initProjectCards() {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const isExpanded = card.classList.contains('expanded');
-            cards.forEach(c => c.classList.remove('expanded', 'dimmed'));
-            if (!isExpanded) {
-                card.classList.add('expanded');
-                cards.forEach(c => {
-                    if (c !== card) c.classList.add('dimmed');
-                });
-            }
-        });
-    });
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.project-card')) {
-            cards.forEach(card => card.classList.remove('expanded', 'dimmed'));
+// Smooth scrolling
+document.documentElement.style.scrollBehavior = 'smooth';
+
+// Nav active link highlighting
+const sections = document.querySelectorAll('section[id], footer[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
         }
     });
-}
+}, { threshold: 0.4 });
 
-function addSmoothScrolling() {
-    document.documentElement.style.scrollBehavior = 'smooth';
-}
+sections.forEach(s => sectionObserver.observe(s));
 
-document.addEventListener('DOMContentLoaded', () => {
-    initProjectCards();
-    addSmoothScrolling();
-    console.log('Portfolio loaded successfully!');
-});
+console.log('Portfolio v2 — Dafa Fajar Bagaskara');
