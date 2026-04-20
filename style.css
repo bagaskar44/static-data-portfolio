@@ -948,6 +948,7 @@ h1 .h1-row:last-child {
     .nav-links { display: none; }
     .hero { padding: 68px 20px 36px; }
     .hero-tag-row { display: none; }
+    .hero-overline { display: none; }
     .hero-tag--right { flex-direction: row; }
     h1 { font-size: clamp(3rem, 11vw, 5rem); }
     .h1-row--indent { padding-left: 0.3em; }
