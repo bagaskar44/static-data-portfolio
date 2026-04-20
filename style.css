@@ -246,8 +246,6 @@ h1 .h1-row:last-child {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    border-top: 1px solid var(--border);
-    padding-top: 20px;
 }
 
 .hero-scroll-hint {
